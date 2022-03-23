@@ -1,0 +1,41 @@
+{{> /layout/header}}
+
+<!-- 컨테이너 시작 -->
+<div class="container-fluid mt-4 p-5">
+<div class="input-group mt-4 p-5">
+    <form class="input-group mt-4 p-5">
+    <input name="keyword" type="text" class="form-control" placeholder="제목 검색" value="" required maxlength="300">
+    <button id="btn-search" class="btn btn-dark" type="submit">검색</button>
+    </form>
+  </div>
+    <!-- 게시글 아이템 시작 -->
+    <div class="card mb-3 ">
+        <div class="card-body">
+            <table class="card-title table-hover mt-4 p-5 table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>제목</th>
+          <th>내용</th>
+          <th>작성 시간</th>
+        </tr>
+      </thead>
+              {{#boards}}
+        <tr>
+          <th>{{id}}</th>
+          <th>{{title}}</th>
+          <th>{{content}}</th>
+          <th>{{createDate}}</th>
+        </tr>
+      {{/boards}}
+        <tbody>  </tbody>
+        </table>
+        </div>
+    </div>
+
+
+    <!-- 게시글 아이템 끝 -->
+</div>
+<!-- 컨테이너 끝 -->
+<script src="/js/board.js"></script>
+{{> /layout/footer}}
