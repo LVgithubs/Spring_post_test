@@ -28,7 +28,7 @@ public class BoardController {
         // 1. findAll() 호출
         // 2. model에 담기
         if (keyword == null) {
-            model.addAttribute("boards", BoardRespository.mSearch(""));
+            model.addAttribute("boards", BoardRespository.findAll());
         } else {
             model.addAttribute("boards", BoardRespository.mSearch(keyword));
         }
